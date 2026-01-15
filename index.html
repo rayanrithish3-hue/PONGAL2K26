@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Pongal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #fff7d6;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Kolam (rangoli) background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20px 20px, rgba(180,120,0,0.18) 2px, transparent 2px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ---------- SUN RISING ---------- */
+.sun {
+  position: fixed;
+  bottom: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #ffd700, #ff9800);
+  border-radius: 50%;
+  animation: rise 4s ease-out forwards;
+  z-index: -1;
+}
+
+@keyframes rise {
+  to { bottom: 65%; }
+}
+
+/* ---------- SUGARCANE ---------- */
+.sugarcane {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  font-size: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  animation: sway 3s ease-in-out infinite alternate;
+}
+
+.left { left: 8px; transform-origin: bottom; }
+.right { right: 8px; transform-origin: bottom; }
+
+@keyframes sway {
+  from { transform: rotate(-2deg); }
+  to { transform: rotate(2deg); }
+}
+
+/* ---------- CARD ---------- */
+.card {
+  background: #ffffff;
+  max-width: 360px;
+  margin: 120px auto;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+h1 {
+  color: #b30000;
+}
+
+/* ---------- POT IMAGE ---------- */
+.pot-wrapper {
+  margin-top: 30px;
+}
+
+.pot-wrapper img {
+  width: 260px;
+  max-width: 90%;
+}
+
+/* ---------- FIRE ---------- */
+.fire {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+}
+
+.flame {
+  width: 16px;
+  height: 28px;
+  background: radial-gradient(circle, #ffd700, #ff4500);
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: flicker 0.6s infinite alternate;
+}
+
+@keyframes flicker {
+  from { transform: scaleY(0.9); opacity: 0.7; }
+  to { transform: scaleY(1.2); opacity: 1; }
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  margin-top: 25px;
+  font-size: 18px;
+  color: #6b3b00;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sun -->
+<div class="sun"></div>
+
+<!-- Greeting Card -->
+<div class="card">
+  <h1>🌸 Happy Pongal ✨</h1>
+
+  <p>
+    May this Pongal bring prosperity,<br>
+    warmth, happiness, and new beginnings 🌾
+  </p>
+
+  <div class="pot-wrapper">
+    <img src="pongal-pot.png" alt="Traditional Pongal Pot">
+
+    <div class="fire">
+      <div class="flame"></div>
+      <div class="flame"></div>
+      <div class="flame"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    🌞 Thai Pirandhal Vazhi Pirakkum 🌞
+  </div>
+</div>
+
+</body>
+</html>
